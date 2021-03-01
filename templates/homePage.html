@@ -4,10 +4,10 @@
         <div class="col-lg-12 text-center my-auto">
 
             <small class="s-color">Welcome to my portfolio website!</small>
-            <!-- <div class="animated">
+            <div class="animated">
                 Hey, I'm<br>
-                <span class="color-primary" id="animated-name"></span>
-            </div> -->
+                <span class="color-primary" id="animate-name"></span>
+            </div>
             <div class="row justify-content-center">
                 <div class="col-lg-6 text-center">
                     <p class="s-color mt-5">{{info.mini_about}}</p>
@@ -56,4 +56,50 @@
     {% include 'about_and_contact.html'%}
 
 </div>
+
+<style>
+    .animated {
+        font-size: 40px;
+        color: #d1d8e0;
+        margin-top: 20px;
+        font-weight: 900;
+        height: 60px;
+        line-height: 50px;
+    }
+    
+    .animated span:before {
+        content: '';
+        animation: animate infinite 8s;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    
+    @media (max-width: 800px) {
+        .animated {
+            height: 70px;
+            font-size: 30px;
+        }
+    }
+    
+    @keyframes animate {
+        30% {
+            content: 'KERRY KOGEI';
+            opacity: 1;
+        }
+        45% {
+            opacity: 0;
+        }
+        65% {
+            content: 'Programmer';
+            opacity: 1;
+        }
+        70% {
+            opacity: 0;
+        }
+        80% {
+            content: 'Full Stack Developer';
+            opacity: 1;
+        }
+    }
+</style>
 {% endblock content %}
